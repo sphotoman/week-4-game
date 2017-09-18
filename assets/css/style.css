@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(../../assets/images/crystalBackground.png);
+	background-color: blue;
+	
+}
+
+.container {
+	margin: 20px;
+}
+h1 {
+	color: white;
+	background-color: orange;
+	padding: 1rem;
+	width: 200px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 25px;
+
+}
+
+.gameDescription {
+	color: green;
+	background-color: tan;
+	padding: 1rem;
+	margin-bottom: 20px;
+	width: 500px;
+}
+.randomNum {
+	width: 80px;
+	height: 60px;
+	padding: 5px;
+	background-color: lightGreen;
+	color: purple;
+	margin-bottom: 10px;
+	float: left;
+}
+p {
+	margin-bottom: 10px;
+}
+
+.boxOfCrystals {
+	clear: both;
+	background-color: yellow;
+	margin-bottom: 10px;
+	width: 350px;	
+}
+.tealBackround {
+	background-color: teal;
+	width: 250px;
+	color: white;
+	margin-bottom: 10px;
+}
+.winsAndLosses {
+	background-color: lightblue;
+	margin-bottom: 10px;
+	width: 70px;
+	height: 60px;
+	float: left;
+	margin-left: 15px;
+	text-align: center;
+	padding: 5px;
+
+}
+.crystal img {
+	
+	width: 75px;
+	height: 75px; 
+	float: left;
+	margin: 5px;
+}
+
+.containGuessAndWinsAndLoses {
+	width: 500px;
+}
