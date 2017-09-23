@@ -1,3 +1,7 @@
+
+// Display Random Number
+$(document).ready(function(){
+		
 // Global Variables
 var wins=0;
 var loses=0;
@@ -15,6 +19,9 @@ var crystal4Value = Math.floor(Math.random()*(crystalMax-crystalMin+1)+crystalMi
 
 var randomNum = Math.floor(Math.random()*(randomMax-randomMin+1)+randomMin);
 
+$("#randomNumber").text("Match this number: " + randomNum);
+		$("#wins").text(wins);
+		$("#loses").text(loses);
 
 console.log("crystal 1 = " + crystal1Value);
 console.log("crystal 2 = " + crystal2Value);
@@ -23,74 +30,77 @@ console.log("crystal 4 = " + crystal4Value);
 console.log("Random #  = " + randomNum);
 
 // Functions & Methods
-$("#crystal1").click(function(){
-    totalScore= totalScore + crystal1Value;
-    console.log("totalScore =" + totalScore);
-});
+$(".crystal").click(function(){
+	var elemId = $(this).attr('id');
 
-$("#crystal2").click(function(){
-    totalScore= totalScore + crystal2Value;
-    console.log("totalScore =" + totalScore);
-});
-
-$("#crystal3").click(function(){
-    totalScore= totalScore + crystal3Value;
-    console.log("totalScore =" + totalScore);
-});
-
-$("#crystal4").click(function(){
-    totalScore= totalScore + crystal4Value;
-    console.log("totalScore =" + totalScore);
-});
-
-
-// add value of crystal seletions to totalScore and Display on page.
-$("#crystal1").click(function(){
-    $("#guessesTotal").text(totalScore);
-    // winOrLose();
-});
-
-$("#crystal2").click(function(){
-    $("#guessesTotal").text(totalScore);
-    // winOrLose();
-});
-
-$("#crystal3").click(function(){
-    $("#guessesTotal").text(totalScore);
-    // winOrLose();
-});
-
-$("#crystal4").click(function(){
-    $("#guessesTotal").text(totalScore);
-    // winOrLose(totalScore);
-
-});
-
-// Display Random Number
-$(document).ready(function(){
-		$("#randomNumber").text("Match this number: " + randomNum);
-		$("#wins").text("wins " + wins);
-		$("#loses").text("loses " + loses);
-
-});
-
-
-function winOrLose() {
-	if (totalScore > randomNum) {
-	console.log("you loser");
+	if (elemId === 'crystal1') {
+		totalScore= totalScore + crystal1Value;
+		$("#guessesTotal").text(totalScore);
+    	
 	}
-		else if (totalScore === randomNum) {
-	console.log("your a winner");
-	}	else ( totalScore < randomNum ) {
-	console.log("you better keep trying");
+
+	if (elemId === 'crystal2') {
+		totalScore= totalScore + crystal2Value;
+		$("#guessesTotal").text(totalScore);
+    	
+	}
+	if (elemId === 'crystal3') {
+		totalScore= totalScore + crystal3Value;
+		$("#guessesTotal").text(totalScore);
+    	
+	}
+	if (elemId === 'crystal4') {
+		totalScore= totalScore + crystal4Value;
+		$("#guessesTotal").text(totalScore);
+    	
+	}
+
+   // repeat 3x with crystals 2-4
+    console.log($(this).attr('id'));
+    console.log("totalScore =" + totalScore);
+
+
+    winOrLose();
+});
+
+
+
+function winOrLose () {
+	if (totalScore > randomNum) {
+			loses++;
+			$("#loses").text(loses);
+			console.log("you loser");
+			reset();
+	}	else if (totalScore === randomNum) {
+			wins++;
+			reset();
+			$("#wins").text(wins);
+			console.log("your a winner");
+	}	else if (totalScore < randomNum) {
+			console.log("you better keep trying");
 	}
 };
 
+function reset () {
+	 
+	 crystal1Value = Math.floor(Math.random()*(crystalMax-crystalMin+1)+crystalMin);
+	 crystal2Value = Math.floor(Math.random()*(crystalMax-crystalMin+1)+crystalMin);
+	 crystal3Value = Math.floor(Math.random()*(crystalMax-crystalMin+1)+crystalMin);
+	 crystal4Value = Math.floor(Math.random()*(crystalMax-crystalMin+1)+crystalMin);
 
-/* Test for Win or Loss;
-If totalScore < randomNum - keep playing
-if totalScore = randomNum - you are a winner, reset game
-if totalScore > randomNum - you lose., reset game
-*/
+	 randomNum = Math.floor(Math.random()*(randomMax-randomMin+1)+randomMin);
+	 $("#randomNumber").text("Match this number: " + randomNum);
+	 totalScore=0;
+	 $("#guessesTotal").text(totalScore);
 
- 
+	 	console.log("crystal 1 = " + crystal1Value);
+		console.log("crystal 2 = " + crystal2Value);
+		console.log("crystal 3 = " + crystal3Value);
+		console.log("crystal 4 = " + crystal4Value);
+		console.log("Random #  = " + randomNum);
+		}
+
+
+
+
+ });
