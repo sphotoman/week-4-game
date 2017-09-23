@@ -9,13 +9,14 @@ body {
 }
 
 .container {
-	margin: 20px;
+	margin: 20px;	
+	
 }
 h1 {
 	color: white;
 	background-color: orange;
 	padding: 1rem;
-	width: 200px;
+	width: 350px;
 	margin-bottom: 10px;
 	font-weight: 600;
 	font-size: 25px;
@@ -30,13 +31,15 @@ h1 {
 	width: 500px;
 }
 .randomNum {
-	width: 80px;
-	height: 60px;
-	padding: 5px;
+	width: 90px;
+	height: 70px;
+	padding: 10px;
 	background-color: lightGreen;
 	color: purple;
 	margin-bottom: 10px;
 	float: left;
+	text-align: center;
+
 }
 p {
 	margin-bottom: 10px;
@@ -46,23 +49,25 @@ p {
 	clear: both;
 	background-color: yellow;
 	margin-bottom: 10px;
-	width: 350px;	
+	margin-top: 25px;
+	width: 340px;	
 }
 .tealBackround {
 	background-color: teal;
-	width: 250px;
+	width: 345px;
+	padding: 10px;
 	color: white;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .winsAndLosses {
 	background-color: lightblue;
 	margin-bottom: 10px;
-	width: 70px;
-	height: 60px;
+	width: 60px;
+	height: 70px;
 	float: left;
 	margin-left: 15px;
 	text-align: center;
-	padding: 5px;
+	padding: 10px;
 
 }
 .crystal img {
@@ -73,6 +78,3 @@ p {
 	margin: 5px;
 }
 
-.containGuessAndWinsAndLoses {
-	width: 500px;
-}
